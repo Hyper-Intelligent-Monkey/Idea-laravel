@@ -34,3 +34,5 @@ class User extends Authenticatable
         ];
     }
 }
+
+// test sample 1
