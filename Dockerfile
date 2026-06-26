@@ -1,11 +1,20 @@
-# PHP 8.3 version
-FROM php:8.3-fpm-alpine
+# PHP 8.5 version
+FROM php:8.5-fpm-alpine
 
-# Install Nginx, supervisor, and system tools
-RUN apk add --no-cache nginx supervisor curl libpng-dev libxml2-dev zip unzip
+# Install system dependencies, build tools, and common PHP extension libraries
+RUN apk add --no-cache \
+    nginx \
+    supervisor \
+    curl \
+    libpng-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    oniguruma-dev \
+    libzip-dev
 
 # Install PHP extensions for MySQL and math operations
-RUN docker-php-ext-install pdo_mysql bcmath
+RUN docker-php-ext-install pdo_mysql bcmath mbstring xml zip
 
 # Custom Nginx configuration
 COPY .docker/nginx.conf /etc/nginx/nginx.conf
