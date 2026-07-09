@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copy package files and install frontend dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts
 
 # Copy the rest of your code and run the Vite build
 COPY . .
