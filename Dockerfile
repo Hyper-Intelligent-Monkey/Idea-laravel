@@ -49,6 +49,9 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 # Give proper file permissions to Laravel's storage and build directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public/build
 
+# Create the symbolic link for storage
+RUN php artisan storage:link
+
 EXPOSE 80
 
 # Start both PHP-FPM and Nginx simultaneously
