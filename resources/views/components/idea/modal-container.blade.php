@@ -105,7 +105,7 @@
                                 <template x-for="(step, index) in steps" :key="step.id || index">
                                     <div class="flex gap-x-2 items-center">
                                         <input :name="`steps[${index}][description]`" x-model="step.description" class="input">
-                                        <input type="hidden" :name="`steps[${index}][completed]`" x-model="step.completed ? '1' : '0'" class="input">
+                                        <input type="hidden" :name="`steps[${index}][completed]`" :value="step.completed ? '1' : '0'" class="input">
                                         <button
                                             type="button"
                                             aria-label="Remove step"
