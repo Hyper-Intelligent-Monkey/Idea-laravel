@@ -37,7 +37,9 @@
                             {{$idea->status->label()}}
                         </x-idea.status-label>
                     </div>
-                    <div class="md:text-sm">{{$idea->description}}</div>
+                    <div class="prose prose-invert md:text-sm line-clamp-3 leading-relaxed">
+                        {!! $idea->formattedDescription !!}
+                    </div>
                     <div class="mt-4">
                         {{ $idea->created_at->diffforHumans() }}
                     </div>

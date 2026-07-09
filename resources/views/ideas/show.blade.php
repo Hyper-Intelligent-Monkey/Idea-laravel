@@ -43,9 +43,9 @@
             </div>
 
             @if ($idea->description)
-                <x-card class="mt-6">
-                    <div>
-                        {{ $idea->description }}
+                <x-card class="mt-6" is="div">
+                    <div class="prose prose-invert md:text-sm leading-relaxed">
+                        {!! $idea->formattedDescription !!}
                     </div>
                     
                 </x-card> 
