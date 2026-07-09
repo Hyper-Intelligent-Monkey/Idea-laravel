@@ -75,7 +75,7 @@
             @endif
 
 
-            @if ($idea->links->count())
+            @if ($idea->links?->count())
                 <div>
                     <h3 class="font-bold text-xl mt-6">Links</h3>
                     <div class="mt-2 space-y-2">
