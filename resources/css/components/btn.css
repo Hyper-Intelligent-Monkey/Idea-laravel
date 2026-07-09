@@ -51,3 +51,18 @@ button {
 
 .btn.btn-secondary:hover {
     background: color-mix(in srgb, black 10%, var(--color-secondary));}
+
+.btn-dropdown{
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-lg);
+    padding-block: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 2);
+    width: 100%;
+    text-align: left;
+    color: var(--color-foreground);
+}
+
+.btn-dropdown:hover {
+    background: color-mix(in srgb, black 25%, var(--color-foreground));
+}

@@ -18,7 +18,10 @@ use Tests\TestCase;
 
 pest()->extend(TestCase::class)
     ->use(RefreshDatabase::class)
-    ->in('Browser', 'Unit');
+    ->in('Browser', 'Unit', 'Feature');
+
+// Change the default browser here (options: inChrome, inFirefox, inSafari)
+pest()->browser()->inFirefox();
 
 /*
 |--------------------------------------------------------------------------

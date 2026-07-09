@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -10,11 +12,13 @@ use Illuminate\Validation\Rule;
 
 class RegisteredUserController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('auth.register');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => ['required', 'string', 'min:3', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')],
@@ -29,8 +33,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'registration complete');
+        return to_route('idea.index')->with('success', 'Registration complete!');
     }
-
-
 }

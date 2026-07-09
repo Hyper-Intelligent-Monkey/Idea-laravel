@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,13 +14,14 @@ class SessionsController extends Controller
         return view('auth.login');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $attributes = $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'max:255'],
         ]);
 
-        if (!Auth::attempt($attributes)) {
+        if (! Auth::attempt($attributes)) {
             return back()
                 ->withErrors([
                     'password' => 'Your provided credentials could not be verified.',
@@ -28,7 +31,7 @@ class SessionsController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/')->with('success', 'Welcome you are now logged in.');
+        return redirect()->intended(route('idea.index'))->with('success', 'Welcome you are now logged in.');
     }
 
     public function destroy(Request $request)
@@ -41,4 +44,3 @@ class SessionsController extends Controller
         return redirect('/login');
     }
 }
-

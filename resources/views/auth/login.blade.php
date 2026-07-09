@@ -1,6 +1,6 @@
 <x-layout>
     <x-form title="Log in" description="Start organizing your ideas.">
-        <form action="/login" method="POST" class="space-y-4">
+        <form action="{{ route('login') }}" method="POST" class="space-y-4">            
             @csrf
             <x-form.field type="email" name="email" label="Email"/>
             <x-form.field type="password" name="password" label="Password"/>

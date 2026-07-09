@@ -9,6 +9,8 @@
 
         <div class="flex gap-x-3 items-center">
             @auth
+                <a href="/profile/edit">Edit Profile</a>
+
                 <form method="POST" action="/logout">
                     @csrf
                     <button type="submit" class="btn" data-test="logout-btn">Log out</button>

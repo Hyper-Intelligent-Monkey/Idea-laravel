@@ -2,8 +2,6 @@
 
 use App\Models\Idea;
 use App\Models\User;
-use Illuminate\Support\Collection as SupportCollection;
-use Ramsey\Collection\Collection;
 
 test('it belongs to a user', function () {
     $idea = Idea::factory()->create();

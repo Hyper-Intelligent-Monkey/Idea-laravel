@@ -8,7 +8,7 @@ test('registers a user', function () {
         ->fill('email', 'johndoe@example.com')
         ->fill('password', 'password')
         ->click('@register-btn')
-        ->assertPathIs('/');
+        ->assertRoute('idea.index');
 
     $this->assertAuthenticated();
 
@@ -17,5 +17,3 @@ test('registers a user', function () {
         'email' => 'johndoe@example.com',
     ]);
 });
-
-

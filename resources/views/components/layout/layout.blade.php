@@ -16,15 +16,14 @@
 
     @session('success')
         <div 
-        x-data="{show: true}"
-        x-show="show"
-        x-init="setTimeout(() => show = false, 3000)"
-        x-transition.opacity.duration.300ms
-        class="w-full px-6 absolute bottom-4">
-            <div class="flex justify-end">
-                <div class="bg-primary text-primary-foreground px-3 py-2 rounded-lg w-fit right-4">
-                    {{ $value }}
-                </div>
+            x-data="{ show: true }"
+            x-show="show"
+            x-init="setTimeout(() => show = false, 3000)"
+            x-transition.opacity.duration.300ms
+            class="fixed bottom-4 right-4 z-50 pointer-events-none"
+        >
+            <div class="bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg pointer-events-auto">
+                {{ $value }}
             </div>
         </div>
     @endsession
