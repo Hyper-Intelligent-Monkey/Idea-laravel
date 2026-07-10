@@ -59,7 +59,7 @@ class Idea extends Model
     protected function description(): Attribute
     {
         return Attribute::make(
-            set: fn (string $value) => htmlspecialchars_decode($value),
+            set: fn (?string $value) => htmlspecialchars_decode((string) $value),
         );
     }
 }
