@@ -11,11 +11,24 @@ This project serves to teach and enhance my understanding of the Laravel framewo
 
 ### Tech Stack
 
+#### Core Frameworks
 - **Backend:** PHP 8.5 & [Laravel 13.17](https://laravel.com/docs)
 - **Frontend:** [Tailwind CSS 4.3](https://tailwindcss.com/) & [Alpine.js 3.15](https://alpinejs.dev/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
-- **Database:** MySQL (Hosted on [Aiven](https://aiven.io/))
 - **Testing:** [Pest 4.7](https://pestphp.com/)
+
+#### Infrastructure & Tools
+**Server** 
+- Local Development: [Laravel Herd](https://herd.laravel.com/) 
+- Production Development: [Docker](https://www.docker.com/) & [Nginx](https://www.nginx.com/)
+**Hosting** 
+- [Render](https://render.com/)
+**Database**
+- MySQL (via [Aiven](https://aiven.io/))
+**DB Management**
+- [Beekeeper Studio](https://www.beekeeperstudio.io/)
+**File Storage** 
+- [AWS S3](https://aws.amazon.com/s3/)
 
 ---
 
