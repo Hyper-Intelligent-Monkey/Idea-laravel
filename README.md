@@ -87,7 +87,12 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 People who have contributed to this project.
 
 <a href="https://github.com/Hyper-Intelligent-Monkey">
-    <img src="https://github.com/Hyper-Intelligent-Monkey.png" width="60px" alt="Hyper-Intelligent-Monkey Profile" />
+    <img 
+        src="https://github.com/Hyper-Intelligent-Monkey.png" 
+        width="60" 
+        style="border-radius: 50%; border: 2px solid #374151; object-fit: cover;" 
+        alt="Hyper-Intelligent-Monkey Profile" 
+    />
 </a>
 
 ## Contact
