@@ -1,58 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## About The Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a modern Laravel website that allows users to organize and plan their ideas. This is a project recreation from the [Laravel From Scratch (2026 Edition)](https://laracasts.com/series/laravel-from-scratch-2026) series.
 
-## About Laravel
+The project is optimized for two distinct environments:
+- **Local Development:** Using [Laravel Herd](https://herd.laravel.com/) for a fast, local development experience.
+- **Production Deployment:** Containerized using **Docker** and **Nginx**, specifically tailored for deployment on [Render](https://render.com/).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Motivation
+This project serves to teach and enhance my understanding of the Laravel framework, PHP 8.5, and modern development environments, while following industry best practices.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend:** PHP 8.5 & [Laravel 13.17](https://laravel.com/docs)
+- **Frontend:** [Tailwind CSS 4.3](https://tailwindcss.com/) & [Alpine.js 3.15](https://alpinejs.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Database:** MySQL (Hosted on [Aiven](https://aiven.io/))
+- **Testing:** [Pest 4.7](https://pestphp.com/)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Getting Started
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Local Development (Herd)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Hyper-Intelligent-Monkey/Idea-laravel.git
+    cd idea-project
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    composer install
+    npm install
+    ```
+3.  **Database Setup:**
+    - Create a MySQL database in your local environment or on Aiven.
+    - Update the `DB_*` variables in your `.env` file.
+    - Run migrations:
+      ```bash
+      php artisan migrate
+      ```
+4.  **Compile Assets:**
+    ```bash
+    npm run dev
+    ```
+6.  **Access the site:** If using Herd, make sure it is running in the background.
+    - Go to project directory.
+    - Open terminal on project.
+    - Run herd:
+    ```bash
+      herd link
+      ```
+
+---
+
+## Production Deployment (Render)
+
+This project uses a multi-stage **Dockerfile** and a custom **Nginx** configuration (`.docker/nginx.conf`) for production.
+
+### Render Configuration
+1.  **Runtime:** Select **Docker**.
+2.  **Environment Variables:** Configure these in the Render Dashboard:
+    - `APP_ENV`: `production`
+    - `APP_DEBUG`: `false`
+    - `APP_KEY`: (Generate locally with `php artisan key:generate --show`)
+    - `DB_CONNECTION`: `mysql`
+    - `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`: (From your Aiven MySQL console)
+3.  **Build:** Render will automatically use the `Dockerfile` in the root directory.
+
+---
 
 ## Agentic Development
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+This project is optimized for AI coding agents (Model Context Protocol). It includes [Laravel Boost](https://github.com/laravel/boost) to provide specialized tools and context for agents like Cline, Cursor, and GitHub Copilot.
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+php artisan boost:mcp
 ```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Contributors
+
+People who have contributed to this project.
+
+<a href="https://github.com/Hyper-Intelligent-Monkey">
+    <img src="https://github.com" alt="Hyper-Intelligent-Monkey Profile" />
+</a>
+
+## Contact
+
+Vinn Runkee Cañares - https://www.linkedin.com/in/vinn-runkee-ca%C3%B1ares-053867414 - vinnrunkee.c@gmail.com
+Project Link: https://idea-set.onrender.com

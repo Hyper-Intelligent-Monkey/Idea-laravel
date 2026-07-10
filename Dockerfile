@@ -21,14 +21,12 @@ RUN apk add --no-cache \
     supervisor \
     curl \
     libpng-dev \
-    libxml2-dev \
     zip \
     unzip \
-    oniguruma-dev \
     libzip-dev
 
 # Install PHP extensions for MySQL and math operations
-RUN docker-php-ext-install pdo_mysql bcmath mbstring xml zip
+RUN docker-php-ext-install pdo_mysql bcmath zip
 
 # Custom Nginx configuration
 COPY .docker/nginx.conf /etc/nginx/nginx.conf
@@ -36,20 +34,24 @@ COPY .docker/nginx.conf /etc/nginx/nginx.conf
 # Set working directory inside container
 WORKDIR /var/www
 
+# Copy Composer from the official image and install dependencies
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+
 # Copy all application files
 COPY . .
 
 # CRITICAL: Copy the compiled Vite assets from Stage 1 into your public directory
 COPY --from=frontend-builder /app/public/build ./public/build
 
-# Copy Composer from the official image and install dependencies
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Finish Composer tasks
+RUN composer dump-autoload --optimize
 
 # Give proper file permissions to Laravel's storage and build directories
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public/build
 
-# Create the symbolic link for storage
+# Create link for storage
 RUN php artisan storage:link
 
 EXPOSE 80
