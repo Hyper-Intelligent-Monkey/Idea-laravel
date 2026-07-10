@@ -82,14 +82,6 @@ php artisan boost:mcp
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Contributors
-
-People who have contributed to this project.
-
-<a href="https://github.com/Hyper-Intelligent-Monkey">
-    <img src="https://github.com/Hyper-Intelligent-Monkey.png" alt="Hyper-Intelligent-Monkey Profile" style="border-radius: 50%;" width="150" height="150" />
-</a>
-
 ## Contact
 
 Vinn Runkee Cañares - https://www.linkedin.com/in/vinn-runkee-ca%C3%B1ares-053867414 - vinnrunkee.c@gmail.com  
