@@ -31,7 +31,7 @@ class IdeaRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'status' => ['required', Rule::enum(IdeaStatus::class)],
             'links' => ['nullable', 'array'],
-            'links.*' => ['url', 'max:255'],
+            'links.*' => ['nullable', 'string', 'regex:/^https?:\/\//', 'max:255'],
             'steps' => ['nullable', 'array'],
             'steps.*.description' => ['string', 'max:255'],
             'steps.*.completed' => ['boolean'],

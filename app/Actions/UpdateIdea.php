@@ -17,7 +17,7 @@ class UpdateIdea
         ])->toArray();
 
         if (($attributes['image'] ?? null) instanceof UploadedFile) {
-            $data['image_path'] = $attributes['image']->store('ideas', 'public');
+            $data['image_path'] = $attributes['image']->store('ideas');
         }
 
         DB::transaction(function () use ($idea, $data, $attributes) {

@@ -175,7 +175,8 @@
                                     <input
                                         x-model="newLink"
                                         x-ref="newLinkInput"
-                                        type="url"
+                                        type="text"
+                                        inputmode="url"
                                         id="new-link"
                                         data-test="new-link"
                                         placeholder="http://example.com"

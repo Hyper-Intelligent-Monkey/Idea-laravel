@@ -55,4 +55,11 @@ class Idea extends Model
     {
         return Attribute::get(fn($value, $attributes) => str($attributes['description'])->markdown());
     }
+
+    protected function description(): Attribute
+    {
+        return Attribute::make(
+            set: fn (string $value) => htmlspecialchars_decode($value),
+        );
+    }
 }
