@@ -65,7 +65,7 @@
                         @if ($idea->image_path)
                             <div class="space-y-2">
                                 <img
-                                    src="{{ asset('storage/' . $idea->image_path) }}"
+                                    src="{{ \Illuminate\Support\Facades\Storage::url($idea->image_path) }}"
                                     alt="{{ $idea->title }}"
                                     class="w-full h-48 object-cover rounded-lg">
 

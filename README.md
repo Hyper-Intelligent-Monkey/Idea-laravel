@@ -66,7 +66,14 @@ This project uses a multi-stage **Dockerfile** and a custom **Nginx** configurat
     - `APP_KEY`: (Generate locally with `php artisan key:generate --show`)
     - `DB_CONNECTION`: `mysql`
     - `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`: (From your Aiven MySQL console)
+    - `FILESYSTEM_DISK`: `s3`
+    - `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`, `AWS_BUCKET`: (From your AWS S3 Console)
 3.  **Build:** Render will automatically use the `Dockerfile` in the root directory.
+
+### Persistent Storage (AWS S3)
+Unlike standard VPS deployments, this project is designed for **stateless deployment** on Render. Instead of using Render's local disk or persistent disks, it uses **AWS S3** for all user-uploaded images. This ensures:
+- **Scalability:** Images are served independently of the application server.
+- **Persistence:** Uploaded content is never lost when the Render container restarts or redeploys.
 
 ---
 
@@ -87,7 +94,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 People who have contributed to this project.
 
 <a href="https://github.com/Hyper-Intelligent-Monkey">
-    <img src="https://github.com" alt="Hyper-Intelligent-Monkey Profile" />
+    <img src="https://github.com/Hyper-Intelligent-Monkey.png" width="60px" alt="Hyper-Intelligent-Monkey Profile" />
 </a>
 
 ## Contact

@@ -23,7 +23,7 @@ class CreateIdea
         ])->toArray();
 
         if (($attributes['image'] ?? null) instanceof UploadedFile) {
-            $data['image_path'] = $attributes['image']->store('ideas', 'public');
+            $data['image_path'] = $attributes['image']->store('ideas');
         }
 
         // Solution for testing form without (enctype="multipart/form-data) issues.
@@ -31,7 +31,7 @@ class CreateIdea
         /*
         if ($image = ($attributes['image'] ?? null)) {
             if ($image instanceof \Illuminate\Http\UploadedFile) {
-                $data['image_path'] = $image->store('ideas', 'public');
+                $data['image_path'] = $image->store('ideas');
             } elseif (is_string($image) && str_starts_with($image, 'data:image')) {
                 // Convert Base64 to Binary Image
                 @list($type, $fileData) = explode(';', $image);
@@ -41,7 +41,7 @@ class CreateIdea
                 $binaryData = base64_decode($fileData);
                 $path = 'ideas/' . Str::random(40) . '.' . $extension;
 
-                Storage::disk('public')->put($path, $binaryData);
+                Storage::put($path, $binaryData);
                 $data['image_path'] = $path;
             }
         }*/
