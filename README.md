@@ -21,12 +21,16 @@ This project serves to teach and enhance my understanding of the Laravel framewo
 **Server** 
 - Local Development: [Laravel Herd](https://herd.laravel.com/) 
 - Production Development: [Docker](https://www.docker.com/) & [Nginx](https://www.nginx.com/)
+
 **Hosting** 
 - [Render](https://render.com/)
+
 **Database**
 - MySQL (via [Aiven](https://aiven.io/))
+
 **DB Management**
 - [Beekeeper Studio](https://www.beekeeperstudio.io/)
+
 **File Storage** 
 - [AWS S3](https://aws.amazon.com/s3/)
 
