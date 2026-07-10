@@ -87,10 +87,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 People who have contributed to this project.
 
 <a href="https://github.com/Hyper-Intelligent-Monkey">
-    <img src="https://github.com" alt="Hyper-Intelligent-Monkey Profile" />
+    <img src="https://github.com/Hyper-Intelligent-Monkey.png" width="60px" alt="Hyper-Intelligent-Monkey Profile" />
 </a>
 
 ## Contact
 
-Vinn Runkee Cañares - https://www.linkedin.com/in/vinn-runkee-ca%C3%B1ares-053867414 - vinnrunkee.c@gmail.com
+Vinn Runkee Cañares - https://www.linkedin.com/in/vinn-runkee-ca%C3%B1ares-053867414 - vinnrunkee.c@gmail.com  
 Project Link: https://idea-set.onrender.com
