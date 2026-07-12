@@ -1,5 +1,5 @@
 # === STAGE 1: Build Frontend Assets with Vite ===
-FROM node:20-alpine AS frontend-builder
+FROM node:26-alpine AS frontend-builder
 WORKDIR /app
 
 # Copy package files and install frontend dependencies
