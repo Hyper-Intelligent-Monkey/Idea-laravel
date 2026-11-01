@@ -13,7 +13,7 @@
         "amphp/http-server-form-parser": "^2.0",
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0",
-        "league/flysystem-aws-s3-v3": "3.0"
+        "league/flysystem-aws-s3-v3": "3.35.3"
     },
     "require-dev": {
         "driftingly/rector-laravel": "*",
